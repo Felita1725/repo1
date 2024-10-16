@@ -17,7 +17,7 @@ const SplashScreenComponent = () => {
 
   useEffect(() => {
     // Start animation
-    opacity.value = withTiming(1, { duration: 2000, easing: Easing.ease });
+    opacity.value = withTiming(1, { duration: 9000, easing: Easing.ease });
     translateY.value = withTiming(0, {
       duration: 2000,
       easing: Easing.out(Easing.cubic),
@@ -39,12 +39,7 @@ const SplashScreenComponent = () => {
 
   return (
     <View style={styles.container}>
-      {/* Animated Text with Emojis */}
-      <Animated.View style={animatedStyle}>
-        <Text style={styles.emoji}>🚀</Text>
-        <Text style={styles.text}>Welcome to PNG's One and Only</Text>
-        <Text style={styles.emoji}>✨🎉</Text>
-      </Animated.View>
+      <Image source={require('@/assets/images/pic.png')} style={styles.image} />
     </View>
   );
 };
@@ -53,7 +48,6 @@ const SplashScreenComponent = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#4CAF50", // Green background color for a modern splash
     justifyContent: "center",
     alignItems: "center",
   },
@@ -64,9 +58,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 10,
   },
-  emoji: {
-    fontSize: 64, // Large emoji size
-    textAlign: "center",
+  image: {
+    width: '100%',
+    height: '82%',
+    resizeMode: 'cover',
   },
 });
 
